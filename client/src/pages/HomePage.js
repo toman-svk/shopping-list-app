@@ -40,7 +40,7 @@ function HomePage() {
     (l) => l.ownerId === currentUserId && l.archived
   );
 
-  // --- Shared with me (Filip is member, not owner) ---
+  // --- Shared with me (Filip is host, not owner) ---
   const sharedMemberships = listMembers.filter(
   (lm) => lm.userId === currentUserId && lm.status === "active"
   );
