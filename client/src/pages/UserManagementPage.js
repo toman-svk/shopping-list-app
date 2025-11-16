@@ -10,11 +10,18 @@ import shoppingListsData from "../data/shoppingLists.json";
 import listMembersData from "../data/listMembers.json";
 import usersData from "../data/users.json";
 
+// aktuálne prihlásený user – sample: Filip
+const CURRENT_USER_ID = "677f00000000000000000001";
+
 function UserManagementPage() {
   const { listId } = useParams();
 
   const currentList = shoppingListsData.find((l) => l.id === listId);
   const listTitle = currentList ? currentList.name : "List";
+
+  // je aktuálny user owner tohto listu?
+  const isOwner =
+    currentList && currentList.ownerId === CURRENT_USER_ID;
 
   // owner
   const ownerUser =
@@ -30,7 +37,7 @@ function UserManagementPage() {
         id: lm.id, // membership id
         userId: lm.userId,
         name: user ? user.name : "Unknown user",
-        role: lm.role || "member",
+        role: lm.role || "host",
         isOwner: false,
       };
     });
@@ -50,9 +57,18 @@ function UserManagementPage() {
   const [members, setMembers] = useState(initialMembers);
 
   const handleDeleteUser = (memberId) => {
-    setMembers((prev) =>
-      prev.filter((m) => m.id !== memberId)
-    );
+    setMembers((prev) => prev.filter((m) => m.id !== memberId));
+  };
+
+  const handleAddUser = (newName) => {
+    const newMember = {
+      id: "temp-" + Date.now(),
+      userId: "temp-user-" + Date.now(),
+      name: newName,
+      role: "host",
+      isOwner: false,
+    };
+    setMembers((prev) => [...prev, newMember]);
   };
 
   return (
@@ -72,22 +88,17 @@ function UserManagementPage() {
         <List
           type="userManagementView"
           items={members}
-          onDeleteUser={handleDeleteUser}
+          // mazanie userov len pre ownera
+          onDeleteUser={isOwner ? handleDeleteUser : undefined}
         />
 
-        <AddListItem
-          type="addUser"
-          onSave={(newName) => {
-            const newMember = {
-              id: "temp-" + Date.now(),
-              userId: "temp-user-" + Date.now(),
-              name: newName,
-              role: "host",
-              isOwner: false,
-            };
-            setMembers((prev) => [...prev, newMember]);
-          }}
-        />
+        {/* pridávanie userov len pre ownera */}
+        {isOwner && (
+          <AddListItem
+            type="addUser"
+            onSave={handleAddUser}
+          />
+        )}
       </main>
     </div>
   );

@@ -5,8 +5,8 @@ import { FiPlus } from "react-icons/fi";
 import { useNavigate } from "react-router-dom";
 
 function TabSelector(props) {
-  const { type = "tabs" } = props;
-  const navigate = useNavigate();   // 👈 hook musí byť volaný vždy
+  const { type = "tabs", canManageUsers = false } = props;
+  const navigate = useNavigate(); // hook musí byť volaný vždy
 
   if (type === "tabs") {
     const { tabs, activeTabId, onTabChange } = props;
@@ -73,21 +73,19 @@ function TabSelector(props) {
                 </div>
               ))}
 
-              <button
-                type="button"
-                className="add-list-item__collapsed-button"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  goToUserManagement();
-                }}
-                aria-label="Manage users"
-              >
-                +
-              </button>
-
-
-
-
+              {canManageUsers && (
+                <button
+                  type="button"
+                  className="add-list-item__collapsed-button"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    goToUserManagement();
+                  }}
+                  aria-label="Manage users"
+                >
+                  <FiPlus />
+                </button>
+              )}
             </div>
           </div>
         </div>

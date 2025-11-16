@@ -10,13 +10,20 @@ import listMembersData from "../data/listMembers.json";
 import usersData from "../data/users.json";
 import AddListItem from "../components/AddListItem";
 
+// aktuálne prihlásený user – sample: Filip
+const CURRENT_USER_ID = "677f00000000000000000001";
+
 function ItemDetailPage() {
   const { listId } = useParams();
 
+  // nájdem aktuálny list + pôvodný názov
   const currentList = shoppingListsData.find((list) => list.id === listId);
   const initialTitle = currentList ? currentList.name : "Shopping list";
 
   const [listTitle, setListTitle] = useState(initialTitle);
+
+  // je aktuálny user owner?
+  const isOwner = currentList && currentList.ownerId === CURRENT_USER_ID;
 
   // --- OWNER ---
   let owner = null;
@@ -38,10 +45,12 @@ function ItemDetailPage() {
       };
     });
 
+  // položky len pre aktuálny zoznam
   const [items, setItems] = useState(
     itemsData.filter((item) => item.listId === listId)
   );
 
+  // filter: all / checked / unchecked
   const [filterMode, setFilterMode] = useState("all");
 
   const handleMenuClick = () => {
@@ -68,6 +77,7 @@ function ItemDetailPage() {
     setItems((prev) => prev.filter((item) => item.id !== id));
   };
 
+  // prepínanie filter režimu
   const cycleFilterMode = () => {
     setFilterMode((prev) => {
       if (prev === "all") return "checked";
@@ -83,6 +93,7 @@ function ItemDetailPage() {
       ? "Checked"
       : "Unchecked";
 
+  // prefiltrované položky podľa režimu
   const filteredItems = items.filter((item) => {
     if (filterMode === "checked") return item.completed === true;
     if (filterMode === "unchecked") return item.completed === false;
@@ -95,11 +106,18 @@ function ItemDetailPage() {
         title={listTitle}
         showBackButton
         onMenuClick={handleMenuClick}
-        isTitleEditable      // 👈 povolíme edit
+        isTitleEditable={!!isOwner}     // len owner môže meniť názov
         onTitleChange={setListTitle}
       />
 
-      <TabSelector type="users" owner={owner} hosts={hosts} listId={listId} />
+      {/* info o ownerovi + hostoch */}
+      <TabSelector
+        type="users"
+        owner={owner}
+        hosts={hosts}
+        listId={listId}
+        canManageUsers={!!isOwner}      // plusko na pravej strane len pre ownera
+      />
 
       <main>
         <div className="items-header">
@@ -121,6 +139,7 @@ function ItemDetailPage() {
           onDeleteItem={handleDeleteItem}
         />
 
+        {/* položky môžu pridávať aj hostia – logika práv len pre názov & userov */}
         <AddListItem
           type="addListItem"
           onSave={(newName) => {
@@ -132,7 +151,7 @@ function ItemDetailPage() {
               quantity: 1,
               unit: "pcs",
               completed: false,
-              createdBy: "677f00000000000000000001",
+              createdBy: CURRENT_USER_ID,
               createdAt: now,
               updatedAt: now,
             };
