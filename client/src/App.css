@@ -56,3 +56,20 @@ body {
   }
 }
 
+.items-header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.items-header__filter-button {
+  border-radius: 999px;
+  padding: 6px 14px;
+  font-size: 14px;
+  border: none;
+  cursor: pointer;
+  background-color: #e3f1ff;
+  color: var(--back-button-color);
+}

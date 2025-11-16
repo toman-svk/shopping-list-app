@@ -75,15 +75,19 @@ function TabSelector(props) {
 
               <button
                 type="button"
-                className="tab-selector__add-host-button"
+                className="add-list-item__collapsed-button"
                 onClick={(e) => {
                   e.stopPropagation();
                   goToUserManagement();
                 }}
                 aria-label="Manage users"
               >
-                <FiPlus />
+                +
               </button>
+
+
+
+
             </div>
           </div>
         </div>

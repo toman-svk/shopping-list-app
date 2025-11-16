@@ -125,7 +125,7 @@ function ListItem({
             {onDeleteItem && (
                 <button
                 className="list-item__button list-item__button--icon list-item__button--delete"
-                onClick={onDelete}
+                onClick={onDeleteItem}
                 >
                 <FiTrash2 />
                 </button>
