@@ -1,0 +1,106 @@
+.tab-selector {
+  margin: 12px 0;
+  background-color: var(--component-background-color);
+  border-radius: 999px;
+  padding: 4px 6px;
+  box-sizing: border-box;
+  height: calc(var(--list-item-height) * 0.75)
+}
+
+/* -------------- TABS VARIANT -------------- */
+
+.tab-selector__tabs {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4px;
+
+}
+
+.tab-selector__tab {
+  flex: 1;
+  border: none;
+  background: transparent;
+  border-radius: 999px;
+  padding: 6px 10px;
+  font-size: 14px;
+  cursor: pointer;
+  color: var(--text-color-main, #000);
+    height: calc(var(--list-item-height) * 0.6)
+}
+
+.tab-selector__tab--active {
+  background-color: white;
+  font-weight: 600;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+/* medzi stredným a pravým tabom môžeš spraviť pseudo-divider,
+   ale vizuálne ti to už teraz bude dosť blízke screenshotu */
+
+/* -------------- USERS VARIANT -------------- */
+
+.tab-selector__users {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.tab-selector__users-left,
+.tab-selector__users-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tab-selector__label {
+  font-size: 14px;
+  color: var(--text-color-main, #444);
+}
+
+.tab-selector__label--muted {
+  color: var(--text-color-muted, #888);
+}
+
+/* avatary – owner + hosts */
+
+.tab-selector__avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  color: #333;
+}
+
+.tab-selector__avatar--host {
+  background-color: #ece4ff; /* jemne fialová */
+  color: #4a34a5;
+}
+
+.tab-selector__hosts {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* plus ikona na pravej strane */
+
+.tab-selector__add-host-button {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 1px solid #4caf50;
+  background-color: #e5f9ea;
+  color: #4caf50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  cursor: pointer;
+}
+

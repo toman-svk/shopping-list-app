@@ -1,0 +1,134 @@
+[
+  {
+    "id": "677f00000000000000000031",
+    "listId": "677f00000000000000000011",
+    "name": "Milk",
+    "quantity": 2,
+    "unit": "pcs",
+    "completed": false,
+    "createdBy": "677f00000000000000000001",
+    "createdAt": "2025-02-28T10:35:00.000Z",
+    "updatedAt": "2025-02-28T10:35:00.000Z"
+  },
+  {
+    "id": "677f00000000000000000032",
+    "listId": "677f00000000000000000011",
+    "name": "Bread",
+    "quantity": 1,
+    "unit": "loaf",
+    "completed": true,
+    "createdBy": "677f00000000000000000002",
+    "createdAt": "2025-02-28T10:36:00.000Z",
+    "updatedAt": "2025-02-28T10:50:00.000Z"
+  },
+  {
+    "id": "677f00000000000000000033",
+    "listId": "677f00000000000000000012",
+    "name": "Chips",
+    "quantity": 5,
+    "unit": "bags",
+    "completed": false,
+    "createdBy": "677f00000000000000000001",
+    "createdAt": "2025-02-28T10:40:00.000Z",
+    "updatedAt": "2025-02-28T10:40:00.000Z"
+  },
+  {
+    "id": "677f00000000000000000034",
+    "listId": "677f00000000000000000012",
+    "name": "Cola",
+    "quantity": 6,
+    "unit": "bottles",
+    "completed": false,
+    "createdBy": "677f00000000000000000003",
+    "createdAt": "2025-02-28T10:41:00.000Z",
+    "updatedAt": "2025-02-28T10:41:00.000Z"
+  },
+  {
+    "id": "677f00000000000000000035",
+    "listId": "677f00000000000000000013",
+    "name": "Chicken breast",
+    "quantity": 4,
+    "unit": "pcs",
+    "completed": false,
+    "createdBy": "677f00000000000000000001",
+    "createdAt": "2025-02-28T10:45:00.000Z",
+    "updatedAt": "2025-02-28T10:45:00.000Z"
+  },
+  {
+    "id": "677f00000000000000000036",
+    "listId": "677f00000000000000000013",
+    "name": "Rice",
+    "quantity": 1,
+    "unit": "kg",
+    "completed": false,
+    "createdBy": "677f00000000000000000001",
+    "createdAt": "2025-02-28T10:46:00.000Z",
+    "updatedAt": "2025-02-28T10:46:00.000Z"
+  },
+  {
+    "id": "677f00000000000000000037",
+    "listId": "677f00000000000000000014",
+    "name": "Sunscreen",
+    "quantity": 1,
+    "unit": "bottle",
+    "completed": true,
+    "createdBy": "677f00000000000000000001",
+    "createdAt": "2025-02-20T10:00:00.000Z",
+    "updatedAt": "2025-02-25T10:00:00.000Z"
+  },
+  {
+    "id": "677f00000000000000000038",
+    "listId": "677f00000000000000000014",
+    "name": "Flip flops",
+    "quantity": 2,
+    "unit": "pairs",
+    "completed": true,
+    "createdBy": "677f00000000000000000001",
+    "createdAt": "2025-02-20T10:05:00.000Z",
+    "updatedAt": "2025-02-25T10:05:00.000Z"
+  },
+  {
+    "id": "677f00000000000000000039",
+    "listId": "677f00000000000000000015",
+    "name": "Steaks",
+    "quantity": 8,
+    "unit": "pcs",
+    "completed": false,
+    "createdBy": "677f00000000000000000002",
+    "createdAt": "2025-02-28T10:47:00.000Z",
+    "updatedAt": "2025-02-28T10:47:00.000Z"
+  },
+  {
+    "id": "677f0000000000000000003a",
+    "listId": "677f00000000000000000015",
+    "name": "Beer",
+    "quantity": 24,
+    "unit": "bottles",
+    "completed": false,
+    "createdBy": "677f00000000000000000001",
+    "createdAt": "2025-02-28T10:48:00.000Z",
+    "updatedAt": "2025-02-28T10:48:00.000Z"
+  },
+  {
+    "id": "677f0000000000000000003b",
+    "listId": "677f00000000000000000016",
+    "name": "Birthday cake",
+    "quantity": 1,
+    "unit": "pcs",
+    "completed": false,
+    "createdBy": "677f00000000000000000003",
+    "createdAt": "2025-02-28T10:49:00.000Z",
+    "updatedAt": "2025-02-28T10:49:00.000Z"
+  },
+  {
+    "id": "677f0000000000000000003c",
+    "listId": "677f00000000000000000016",
+    "name": "Balloons",
+    "quantity": 20,
+    "unit": "pcs",
+    "completed": false,
+    "createdBy": "677f00000000000000000001",
+    "createdAt": "2025-02-28T10:50:00.000Z",
+    "updatedAt": "2025-02-28T10:50:00.000Z"
+  }
+]

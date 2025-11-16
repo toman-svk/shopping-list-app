@@ -1,0 +1,50 @@
+[
+  {
+    "id": "677f00000000000000000011",
+    "name": "Weekly groceries",
+    "ownerId": "677f00000000000000000001",
+    "archived": false,
+    "createdAt": "2025-02-28T10:20:00.000Z",
+    "updatedAt": "2025-02-28T10:20:00.000Z"
+  },
+  {
+    "id": "677f00000000000000000012",
+    "name": "Party shopping list",
+    "ownerId": "677f00000000000000000001",
+    "archived": false,
+    "createdAt": "2025-02-28T10:25:00.000Z",
+    "updatedAt": "2025-02-28T10:25:00.000Z"
+  },
+  {
+    "id": "677f00000000000000000013",
+    "name": "Work lunch prep",
+    "ownerId": "677f00000000000000000001",
+    "archived": false,
+    "createdAt": "2025-02-28T10:27:00.000Z",
+    "updatedAt": "2025-02-28T10:27:00.000Z"
+  },
+  {
+    "id": "677f00000000000000000014",
+    "name": "Old holiday list",
+    "ownerId": "677f00000000000000000001",
+    "archived": true,
+    "createdAt": "2025-02-20T09:00:00.000Z",
+    "updatedAt": "2025-02-25T09:00:00.000Z"
+  },
+  {
+    "id": "677f00000000000000000015",
+    "name": "Honza's BBQ",
+    "ownerId": "677f00000000000000000002",
+    "archived": false,
+    "createdAt": "2025-02-28T10:28:00.000Z",
+    "updatedAt": "2025-02-28T10:28:00.000Z"
+  },
+  {
+    "id": "677f00000000000000000016",
+    "name": "Lucia's birthday party",
+    "ownerId": "677f00000000000000000003",
+    "archived": false,
+    "createdAt": "2025-02-28T10:29:00.000Z",
+    "updatedAt": "2025-02-28T10:29:00.000Z"
+  }
+]

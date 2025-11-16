@@ -1,0 +1,244 @@
+/* Hlavný riadok – názov vľavo, akcie vpravo */
+.list-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--list-item-height);
+
+  padding: 8px 12px;
+  margin-bottom: 8px;
+
+  background-color: var(--component-background-color);
+  border-radius: 999px; /* pekný „pill“ look */
+  box-sizing: border-box;
+}
+
+/* text naľavo */
+.list-item__name {
+  flex: 1;
+  font-size: 16px;
+  color: var(--text-color-main, #444);
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/* akcie napravo */
+.list-item__actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: 12px;
+}
+
+/* základ pre všetky tlačidlá */
+.list-item__button {
+  border: none;
+  cursor: pointer;
+  font-size: 13px;
+  line-height: 1;
+}
+
+/* malé štvorcové ikonky (archive/delete) */
+.list-item__button--icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: var(--component-background-color);
+  padding: 0;
+  font-size: 16px; /* veľkosť react-ikony */
+}
+
+/* oranžový „archive“ štýl */
+.list-item__button--archive {
+  border: 1px solid var(--archive-button-color);
+  color: var(--archive-button-color);
+}
+
+/* červený „delete“ štýl */
+.list-item__button--delete {
+  border: 1px solid var(--delete-button-color);
+  color: var(--delete-button-color);
+}
+
+/* modrá ikona dverí (leave) */
+.list-item__button--leave {
+  border: 1px solid var(--back-button-color);
+  color: var(--back-button-color);
+  background: none;
+}
+
+/* „pill“ tlačidlá – shared view, check, atď. */
+.list-item__button--pill {
+  padding: 6px 12px;
+  border-radius: 999px;
+  background-color: #ffffff;
+}
+
+/* modré „Leave“ */
+.list-item__button--leave {
+  background-color: #e3f1ff;
+  color: var(--back-button-color);
+  border: 1px solid var(--back-button-color);
+}
+
+/* zelené „Accept invite“ */
+.list-item__button--accept {
+  background-color: #c9f7d8;
+  color: var(--add-button-color);
+  border: 1px solid var(--add-button-color);
+}
+
+/* quantity picker v itemDetailView */
+.list-item__quantity-picker {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.list-item__quantity-value {
+  min-width: 20px;
+  text-align: center;
+  font-size: 14px;
+}
+
+/* role label v userManagementView */
+.list-item__role-label {
+  font-size: 13px;
+  color: var(--text-color-muted, #777);
+  margin-right: 4px;
+}
+
+.list-item__name--link {
+  cursor: pointer;
+}
+
+/* AddListItem – zdieľa vizuálny štýl s ListItem */
+
+/* wrapper pod listom */
+.add-list-item {
+  margin-top: 8px;
+
+  /* zarovnáme + ako názov itemu */
+  display: flex;
+  align-items: center;
+  height: var(--list-item-height); /* rovnaká výška ako list-item */
+  padding: 0 12px;                 /* rovnaký horizontálny padding */
+  box-sizing: border-box;
+}
+
+/* Collapsed – iba zelené plusko */
+.add-list-item__collapsed-button {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 2px solid var(--add-button-color);
+  background: transparent;
+  color: var(--add-button-color);
+  font-size: 18px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0;
+}
+
+/* Expanded – „pill“ riadok podobný .list-item */
+.add-list-item__expanded {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 8px 12px;
+  margin-bottom: 8px;
+
+  background-color: var(--component-background-color);
+  border-radius: 999px;
+  box-sizing: border-box;
+
+  /* ✨ animácia otvorenia zľava doprava */
+  transform-origin: left center;
+  animation: add-list-item-open 0.18s ease-out;
+}
+
+/* otvorenie zľava doprava */
+@keyframes add-list-item-open {
+  from {
+    opacity: 0;
+    transform: scaleX(0.2);
+  }
+  to {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+}
+
+/* zatvorenie – opačný smer */
+@keyframes add-list-item-close {
+  from {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+  to {
+    opacity: 0;
+    transform: scaleX(0.2);
+  }
+}
+
+/* keď zatvárame – prebijeme animáciu na opačnú */
+.add-list-item__expanded--closing {
+  animation: add-list-item-close 0.18s ease-in forwards;
+}
+
+/* input vľavo – namiesto názvu položky */
+.add-list-item__input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background-color: #ffffff;
+  color: var(--text-color-main, #444);
+  margin-right: 8px;
+}
+
+.add-list-item__input::placeholder {
+  color: var(--text-color-muted, #999);
+}
+
+/* akcie vpravo – podobné ako v ListItem */
+.add-list-item__actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* základ buttonov */
+.add-list-item__button {
+  border-radius: 999px;
+  padding: 6px 12px;
+  font-size: 14px;
+  cursor: pointer;
+  border: none;
+  margin: 0 auto;
+}
+
+/* modré Close – vizuálne podobné „Leave“ */
+.add-list-item__button--close {
+  background-color: #e3f1ff;
+  color: var(--back-button-color);
+  border: 1px solid var(--back-button-color);
+}
+
+/* zelené Save – vizuálne podobné „Accept invite“ */
+.add-list-item__button--save {
+  background-color: #c9f7d8;
+  color: var(--add-button-color);
+  border: 1px solid var(--add-button-color);
+}

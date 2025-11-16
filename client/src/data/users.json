@@ -1,0 +1,23 @@
+[
+  {
+    "id": "677f00000000000000000001",
+    "identity": "user-filip",
+    "name": "Filip T.",
+    "email": "filip@example.com",
+    "createdAt": "2025-02-28T10:00:00.000Z"
+  },
+  {
+    "id": "677f00000000000000000002",
+    "identity": "user-honza",
+    "name": "Honza K.",
+    "email": "honza@example.com",
+    "createdAt": "2025-02-28T10:05:00.000Z"
+  },
+  {
+    "id": "677f00000000000000000003",
+    "identity": "user-lucia",
+    "name": "Lucia M.",
+    "email": "lucia@example.com",
+    "createdAt": "2025-02-28T10:10:00.000Z"
+  }
+]
